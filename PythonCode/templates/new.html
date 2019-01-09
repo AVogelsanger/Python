@@ -1,0 +1,18 @@
+<html>
+<head>
+    <title>Formulario Heroi</title>
+</head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+<body>
+    <h1>{{ title }}</h1>
+       <form action="/create" method="post">
+           <label>Nome: </label>
+           <input type="text" name="nome"/>
+           <label>Genero: </label>
+           <input type="text" name="genero"/>
+           <label>Poder: </label>
+           <input type="text" name="poder"/>
+           <button type="submit">Cadastrar Heroi</button>
+       </form>
+</body>
+</html>
