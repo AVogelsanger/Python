@@ -7,12 +7,13 @@
 
     <h1>{{ title }}</h1>
     
-       <form action="/auth" method="POST">
+       <form action="/auth" method="post">
            
            <p>Usuario: </p>
-           <input type="text" name="usuario"/>
+           <input type="text" name="usuario" id="idLogin" class="form-control" 
+                   placeholder="e-mail ou nome"/>
            <p>Senha: </p>
-           <input type="text" name="senha"/>
+           <input type="password" name="senha" id="idSenha" class="form-control"/>
            <button type="submit">Login</button>
        </form>
 </body>

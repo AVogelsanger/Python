@@ -16,13 +16,14 @@ heroi3 = Herois('Capitã Marvel', 'fem', '40')
 
 lista_herois=[heroi1, heroi2, heroi3]
 
+
 @app.route('/')
 def index():
     return render_template('index.html', title='Heroi', lista=lista_herois)
  
 @app.route('/new')
 def new():
-    if 'usuario_logado' not in session or session['usuario_logado'] == None:
+    if 'usuario_logado' not in session['usuario_logado'] or session['usuario_logado'] == None:
          return redirect('/login')
     return render_template('new.html', title='Cadastro Heroi')
 
@@ -41,20 +42,36 @@ def login():
 
 
 
-@app.route('/auth', methods=['POST'])
+@app.route('/auth', methods=['post'])
 def auth():
+    
+    
+    lista_usuarios=[]
+
+    usuario=request.form['usuario']
+    senha=request.form['senha']
+    
+    
+    while usuario == [A-Z] or [a-z] or [0-9]:
+     cont = 0
+     lista_user in lista_usuarios:
+        print(lista_user)
+    
+    
     if 'pudinzinho' in request.form['senha']:
         session['usuario_logado'] = request.form['usuario']
         flash('O {} logado. '.format(request.form['usuario']))
-        return redirect('/new')
+        return redirect('/create')
     else:
         flash('Senha e/ou usuario inválidos. Tente novamente!')
         return redirect('/login')
+    
+    
     
 @app.route('/logout')
 def logout():
     session['usuario_logado'] = None
     return redirect('/')
-    
 
+    
 app.run(debug=True)
